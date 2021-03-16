@@ -1,6 +1,7 @@
 /*Only needed for the controls*/
 phone = document.getElementById("phone_1"),
-iframe = document.getElementById("frame_1"),
+iframe = document.getElementById("frame_1");
+
 
 /*View*/
 function updateView(view) {
@@ -15,15 +16,14 @@ function updateIframe() {
   // preload iphone width and height
   phone.style.width = "375px";
   phone.style.height = "667px";
-
+  
   /*Idea by /u/aerosole*/
   document.getElementById("wrapper").style.perspective = (
     document.getElementById("iframePerspective").checked ? "1300px" : "none"
   );
-
 }
-
 updateIframe();
+
 
 /*Events*/
 document.getElementById("controls").addEventListener("change", function() {
@@ -71,7 +71,6 @@ document.getElementById("phones").addEventListener("click", function(evt) {
 
 });
 
-
  iframe = document.getElementById('frame_1');
 
   if (iframe.attachEvent){
@@ -85,7 +84,6 @@ document.getElementById("phones").addEventListener("click", function(evt) {
   }
 
 function afterLoading(){
-
     setTimeout(function() {
         phone.className = "phone view_1";
         setTimeout(function() {
@@ -104,3 +102,4 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
+document.getElementById('main').addEventListener('click', closeNav);
