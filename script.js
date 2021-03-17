@@ -78,8 +78,8 @@ document.getElementById("phones").addEventListener("click", function(evt) {
     height = 497.007874016; 
   }
 
-    phone.style.width = width + "px";
-    phone.style.height = height + "px"; 
+    phone.style.width = `${width}px`;
+    phone.style.height = `${height}px`; 
 
 });
 
@@ -103,6 +103,7 @@ function afterLoading(){
             phone.className = "phone view_2";
         }, 1000);
     }, 000);
+
 
 }
 /* Set the width of the side navigation to 250px */
