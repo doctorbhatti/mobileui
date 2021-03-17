@@ -65,6 +65,18 @@ document.getElementById("phones").addEventListener("click", function(evt) {
     width = 768;
     height = 1024; 
   }
+  
+  if(evt.target.value == 6){
+    //poco x3
+    width = 290;
+    height = 624; 
+  }
+  
+  if(evt.target.value == 7){
+    // iphone 12 mini
+    width = 242.645669291;
+    height = 497.007874016; 
+  }
 
     phone.style.width = width + "px";
     phone.style.height = height + "px"; 
@@ -85,12 +97,12 @@ document.getElementById("phones").addEventListener("click", function(evt) {
 
 function afterLoading(){
     setTimeout(function() {
-        phone.className = "phone view_1";
+        phone.className = "phone view_1 ";
         setTimeout(function() {
             // do second thing
-            phone.className = "phone view_1 rotate";
+            phone.className = "phone view_2";
         }, 1000);
-    }, 1000);
+    }, 000);
 
 }
 /* Set the width of the side navigation to 250px */
