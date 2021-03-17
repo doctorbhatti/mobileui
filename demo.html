@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chromely</title>
+    <link rel="stylesheet" href="Content/css/bootstrap.min.css">
+    <script src="Content/js/jquery.min.js"></script>
+    <script src="Content/js/tether.min.js"></script>
+    <script src="Content/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        body, html {
+            height: 100%;
+            display: grid;
+        }
+
+        .centerBlock {
+            display: table;
+            margin: auto;
+        }
+
+        .show {
+            display: block !important;
+        }
+
+        .hidden {
+            display: none !important;
+            visibility: hidden !important;
+        }
+
+        .invisible {
+            visibility: hidden;
+        }
+
+        .modal-dialog {
+            width: 80%;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            $('#demoTabs a').on('click', function (e) {
+                e.preventDefault()
+                var url = $(this).attr("data-url"); // the remote url for content
+                demoframe.src = url;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="maincontainer" class="container centerBlock">
+
+        <!-- Demo Page -->
+        <div id="demoPage" class="col-12">
+            <div class="row" style="height:25px;"></div>
+
+            <!-- Demo Pages Nav -->
+            <div class="row">
+                <div class="col-3">
+                    <div class="nav flex-column nav-pills" id="demoTabs" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link" data-toggle="tab" href="#Test1" role="tab" data-url="https://www.sesamestreet.org/videos?vid=25260" aria-controls="settings" aria-selected="false">Sesame Street</a>
+                        <a class="nav-link" data-toggle="tab" href="#Test2" role="tab" data-url="https://youtube.com" aria-controls="settings" aria-selected="false">YouTube</a>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="tab-content">
+                        <iframe id="demoframe" name="alldemoframe" src="https://www.sesamestreet.org/videos?vid=25260" width="780" height="800"  is="x-frame-bypass"frameborder="0" />
+                    </div>
+                </div>
+            </div>
+            <!-- End Demo Pages Nav -->
+        </div>
+
+
+    </div>
+     <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
+</body>
+</html>                            

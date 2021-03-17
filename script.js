@@ -24,7 +24,16 @@ function updateIframe() {
 }
 updateIframe();
 
-
+document.getElementById('addXframe').addEventListener('change', function(){
+  if (this.checked) {
+    addXframe();
+    refreshIframe();
+    console.log("Checkbox is checked..");
+  } else {
+    remXframe();
+    console.log("Checkbox is not checked..");
+  }
+})
 /*Events*/
 document.getElementById("controls").addEventListener("change", function() {
   updateIframe();
@@ -106,6 +115,12 @@ function afterLoading(){
 
 
 }
+function addXframe(){
+  document.getElementById("frame_1").setAttribute("is", "x-frame-bypass")
+}
+function remXframe(){
+  document.getElementById("frame_1").removeAttribute("is" ,"x-frame-bypass")
+}
 /* Set the width of the side navigation to 250px */
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
@@ -114,5 +129,11 @@ function openNav() {
 /* Set the width of the side navigation to 0 */
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
+}
+function refreshIframe() {
+   
+        var ifr = document.getElementsByName('Right')[0];
+        ifr.src = ifr.src;
+   
 }
 document.getElementById('main').addEventListener('click', closeNav);
