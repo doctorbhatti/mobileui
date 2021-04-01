@@ -24,7 +24,7 @@ function updateIframe() {
 }
 updateIframe();
 
-document.getElementById('addXframe').addEventListener('change', function(e){
+document.getElementById('addXframe').addEventListener('change', function(){
   if (this.checked) {
     addXframe();
     document.getElementById('frame_1').src = document.getElementById('frame_1').src
@@ -33,7 +33,7 @@ document.getElementById('addXframe').addEventListener('change', function(e){
     remXframe();
     document.getElementById('frame_1').src = document.getElementById('frame_1').src
     console.log("Checkbox is not checked..");
-  }e.preventDefault();
+  }
 })
 /*Events*/
 document.getElementById("controls").addEventListener("change", function() {
@@ -133,3 +133,14 @@ function closeNav() {
 }
 
 document.getElementById('main').addEventListener('click', closeNav);
+function getMovieURL(){
+  var request = new XMLHttpRequest();
+request.open("GET", "urls.json", false);
+request.send(null);
+request.onreadystatechange = function() {
+  if ( request.readyState === 4 && request.status === 200 ) {
+    var my_JSON_object = JSON.parse(request.responseText);
+    console.log(my_JSON_object);
+  }
+}
+}

@@ -15,6 +15,37 @@
 	  #container{
 
 	  }
+	  .responsive-menu-icon::before {
+	content: "\f333";
+	font: normal 20px/1 'dashicons';
+	margin: 0 auto;
+	text-align: center;
+}
+
+.responsive-menu-icon::after {
+	content: "Menu";
+	font-style: normal;
+	text-transform: uppercase;
+	font-size: 1.3em;
+	padding-left: 10px;
+	position: relative;
+	top:-13px;
+}.responsive-menu-icon::before {
+  content: "\f333";
+  font: normal 20px/1 'dashicons';
+  margin: 0 auto;
+  text-align: center;
+}
+
+.responsive-menu-icon::after {
+  content: "Menu";
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  padding-left: 10px;
+  position: relative;
+  top: -13px;
+}
 	  
 	  /*Basic Phone styling*/
 	  
@@ -204,7 +235,7 @@
     to   { opacity: 1; }
 }
 
-*
+
 .sidenav {
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
